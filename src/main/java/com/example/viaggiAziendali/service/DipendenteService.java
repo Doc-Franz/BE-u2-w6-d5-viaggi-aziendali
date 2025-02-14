@@ -2,9 +2,12 @@ package com.example.viaggiAziendali.service;
 
 import com.example.viaggiAziendali.dto.DipendenteDTO;
 import com.example.viaggiAziendali.model.Dipendente;
+import com.example.viaggiAziendali.model.Viaggio;
 import com.example.viaggiAziendali.repository.DipendenteDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 
@@ -16,6 +19,11 @@ public class DipendenteService {
     // lato user arriva oggetto DTO e dovrà essere travasato in entity per poter essere caricato sul database --
     public Long saveDipendente(DipendenteDTO dipendenteDTO){
         return dipendenteDAO.save(dto_entity(dipendenteDTO)).getId();
+    }
+
+    // restituzione di tutti i dipendenti dal database
+    public List<Dipendente> getAllDipendenti(){
+        return dipendenteDAO.findAll();
     }
 
     // DTO -> ENTITY

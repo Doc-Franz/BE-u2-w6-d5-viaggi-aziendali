@@ -15,10 +15,21 @@ public class Prenotazione {
     @Column(nullable = false)
     private LocalDate dataViaggio;
 
+    private String note;
+
     public Prenotazione(){}
 
-    public Prenotazione(LocalDate dataViaggio) {
+    public Prenotazione(LocalDate dataViaggio, String note) {
         this.dataViaggio = dataViaggio;
+        this.note = note;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public LocalDate getDataViaggio() {
@@ -27,5 +38,13 @@ public class Prenotazione {
 
     public void setDataViaggio(LocalDate dataViaggio) {
         this.dataViaggio = dataViaggio;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

@@ -10,10 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/viaggi")
@@ -39,5 +38,11 @@ public class ViaggioController {
 
         long idViaggio = viaggioService.saveViaggio(viaggioDTO);
         return new ResponseEntity<>("Il viaggio con ID " + idViaggio + " è stato salvato correttamente!", HttpStatus.CREATED);
+    }
+
+    // GET per riprendere tutti i viaggi dal db
+    @GetMapping()
+    public List<Viaggio> getAllViaggi(){
+        return viaggioService.getAllViaggi();
     }
 }

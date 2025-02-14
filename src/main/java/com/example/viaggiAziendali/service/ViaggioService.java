@@ -6,6 +6,8 @@ import com.example.viaggiAziendali.repository.ViaggioDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 
 public class ViaggioService {
@@ -13,8 +15,14 @@ public class ViaggioService {
     @Autowired
     ViaggioDAO viaggioDAO;
 
+    // salvataggio di viaggio nel database e restituzione dell'ID
     public Long saveViaggio(ViaggioDTO viaggioDTO){
         return viaggioDAO.save(dto_entity(viaggioDTO)).getId();
+    }
+
+    // restituzione di tutti i viaggi
+    public List<Viaggio> getAllViaggi(){
+        return viaggioDAO.findAll();
     }
 
     // DTO -> ENTITY
