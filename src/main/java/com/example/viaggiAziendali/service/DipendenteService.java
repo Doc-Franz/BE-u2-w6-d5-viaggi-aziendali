@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -24,6 +25,11 @@ public class DipendenteService {
     // restituzione di tutti i dipendenti dal database
     public List<Dipendente> getAllDipendenti(){
         return dipendenteDAO.findAll();
+    }
+
+    // ricerca di un dipendente tramite ID
+    public Optional<Dipendente> getDipendenteById(long dipendenteId){
+        return dipendenteDAO.findById(dipendenteId);
     }
 
     // DTO -> ENTITY

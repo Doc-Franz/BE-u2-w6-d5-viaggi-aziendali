@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -23,6 +24,11 @@ public class ViaggioService {
     // restituzione di tutti i viaggi
     public List<Viaggio> getAllViaggi(){
         return viaggioDAO.findAll();
+    }
+
+    // ricerca di un viaggio tramite ID
+    public Optional<Viaggio> getViaggioById(long viaggioId){
+        return viaggioDAO.findById(viaggioId);
     }
 
     // DTO -> ENTITY

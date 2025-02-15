@@ -13,6 +13,7 @@ public class Prenotazione {
     private long id;
 
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private LocalDate dataViaggio;
 
     private String note;
