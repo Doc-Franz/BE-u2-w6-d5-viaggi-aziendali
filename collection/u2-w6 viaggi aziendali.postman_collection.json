@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "cf818e94-4d35-43cd-9f71-af788efee56d",
+		"name": "u2-w6 viaggi aziendali",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39734713"
+	},
+	"item": [
+		{
+			"name": "{{URL}}/dipendenti",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "dipendente",
+							"value": "{\n    \"username\": \"dhdhdhdh\",\n    \"nome\": \"ddddd\",\n    \"cognome\": \"cncndcokd\",\n    \"email\": \"ciao.rossi@example.com\"\n}",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "immagineDipendente",
+							"contentType": "image/png",
+							"type": "file",
+							"src": "/C:/Users/feder/Downloads/download.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/dipendenti",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"dipendenti"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{URL}}/viaggi",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"destinazione\": \"Monaco\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/viaggi",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"viaggi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{URL}}/dipendenti",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/dipendenti",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"dipendenti"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{URL}}/viaggi",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/viaggi",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"viaggi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{URL}}/dipendenti/2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/dipendenti/2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"dipendenti",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{URL}}/viaggi/4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/viaggi/4",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"viaggi",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{URL}}/dipendenti/prenotazioni?dipendenteId=1&viaggioId=1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/dipendenti/prenotazioni?dipendenteId=1&viaggioId=2",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"dipendenti",
+						"prenotazioni"
+					],
+					"query": [
+						{
+							"key": "dipendenteId",
+							"value": "1"
+						},
+						{
+							"key": "viaggioId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{URL}}/viaggi/2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/viaggi/5",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"viaggi",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
