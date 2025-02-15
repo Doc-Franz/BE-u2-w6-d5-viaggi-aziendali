@@ -1,5 +1,6 @@
 package com.example.viaggiAziendali.dto;
 
+import com.example.viaggiAziendali.enumerations.StatoViaggio;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -12,6 +13,8 @@ public class PrenotazioneDTO {
     @NotNull(message = "Il campo data è obbligatorio")
     private LocalDate dataViaggio;
 
+    private StatoViaggio statoViaggio;
+
     private String note;
 
     public PrenotazioneDTO() {}
@@ -19,6 +22,7 @@ public class PrenotazioneDTO {
     public PrenotazioneDTO(LocalDate dataViaggio, String note) {
         this.dataViaggio = dataViaggio;
         this.note = note;
+        this.statoViaggio = StatoViaggio.PROGRAMMATO;
     }
 
     public LocalDate getDataViaggio() {

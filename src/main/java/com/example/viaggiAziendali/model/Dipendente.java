@@ -23,6 +23,8 @@ public class Dipendente {
 
     private String email;
 
+    private String immagineDipendente;
+
     // relazione unidirezionale one to many tra utente e prenotazioni
     @OneToMany
     @JoinColumn(name = "utente_id")
@@ -79,6 +81,14 @@ public class Dipendente {
 
     public List<Prenotazione> getPrenotazioneList() {
         return prenotazioneList;
+    }
+
+    public String getImmagineDipendente() {
+        return immagineDipendente;
+    }
+
+    public void setImmagineDipendente(String immagineDipendente) {
+        this.immagineDipendente = immagineDipendente;
     }
 
     public void setPrenotazioneList(List<Prenotazione> prenotazioneList) {

@@ -17,17 +17,12 @@ public class Viaggio {
     @Column(nullable = false, unique = true)
     private String destinazione;
 
-    @Enumerated(value = EnumType.STRING)
-    private StatoViaggio statoViaggio;
-
     // relazione unidirezionale one to many tra viaggio e prenotazioni
     @OneToMany
     @JoinColumn(name = "viaggio_id")
     List<Prenotazione> prenotazioneList;
 
-    public Viaggio() {
-        this.setStatoViaggio(StatoViaggio.PROGRAMMATO);
-    }
+    public Viaggio() {}
 
     public Viaggio(String destinazione) {
         this.destinazione = destinazione;
@@ -47,14 +42,6 @@ public class Viaggio {
 
     public void setDestinazione(String destinazione) {
         this.destinazione = destinazione;
-    }
-
-    public StatoViaggio getStatoViaggio() {
-        return statoViaggio;
-    }
-
-    public void setStatoViaggio(StatoViaggio statoViaggio) {
-        this.statoViaggio = statoViaggio;
     }
 
     public List<Prenotazione> getPrenotazioneList() {

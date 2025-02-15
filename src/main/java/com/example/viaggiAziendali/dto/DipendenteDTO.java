@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.URL;
 
 public class DipendenteDTO {
 
@@ -21,6 +22,9 @@ public class DipendenteDTO {
 
     @Email(message = "Il formato dell'email non è corretto")
     private String email;
+
+    @URL
+    private String immagineDipendente;
 
     public DipendenteDTO() {}
 
@@ -61,5 +65,13 @@ public class DipendenteDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getImmagineDipendente() {
+        return immagineDipendente;
+    }
+
+    public void setImmagineDipendente(String immagineDipendente) {
+        this.immagineDipendente = immagineDipendente;
     }
 }
